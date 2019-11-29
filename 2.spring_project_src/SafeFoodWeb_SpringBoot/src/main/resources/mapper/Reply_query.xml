@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd"> 
+	
+<mapper namespace="com.ssafy.model.dao.ReplyDao">
+	<insert id="insert" parameterType="reply">
+		insert into reply (id, contents, regdate, fno)
+		values( 
+				#{id:VARCHAR}
+				, #{contents:VARCHAR}
+				, now()
+				, #{fno:INTEGER}
+			)
+	</insert>
+	
+	<update id="update" parameterType="reply">
+		update reply set contents=#{contents:VARCHAR}
+			,regdate=now()
+		where no=#{no:INTEGER}
+	</update>
+	
+	<delete id="delete" parameterType="string">
+		delete from reply
+		where no=#{no:INTEGER}
+	</delete>
+	
+	<select id="search" parameterType="string" resultType="reply">
+		select *
+		from reply
+		where no=#{no:INTEGER}
+	</select>
+	
+	<select id="searchAll" parameterType="string" resultType="reply">
+		select reply.no, reply.id, reply.contents, reply.regdate
+		from reply
+		where reply.fno = #{qno:INTEGER}
+		order by reply.no;
+	</select>
+</mapper>
+
+
+
+
+
+

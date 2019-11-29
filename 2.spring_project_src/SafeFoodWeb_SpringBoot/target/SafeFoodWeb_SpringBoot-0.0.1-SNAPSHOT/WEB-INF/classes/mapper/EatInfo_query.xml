@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd"> 
+	
+
+<mapper namespace="com.ssafy.model.dao.EatDao" >
+
+   <insert id="add"		parameterType="eatinfo">
+   		insert into user_food (id, code, cnt, date)
+   		values (
+   		        #{id:VARCHAR}
+   				,#{code:INTEGER}
+   				,#{cnt:INTEGER}
+   				,now()
+   				)
+   </insert>
+   
+   <delete id="delete" 		parameterType="string">
+   		delete from user_food where no=#{no}
+   </delete>
+   <update id="update"		parameterType="eatinfo">
+   		update user_food set id=#{id:VARCHAR}
+   		                , code = #{code:INTEGER}
+   		                , cnt = #{cnt:INTEGER}
+   		where  no = #{no:INTEGER}
+   </update>
+   
+   <select id="searchEatList"	parameterType="string"		resultType="eatinfo">
+   		select * from user_food where id=#{id}
+   </select>
+   
+   <select id="search"		 parameterType="string"    resultType="eatinfo">
+   		select * from user_food  where no=#{no}
+   </select>
+   
+   <select id="searchAll"	resultType="eatinfo">
+   		select * from user_food
+   </select>
+   <select id="count"	resultType="int">
+   		select count(*) as cnt from user_food
+   </select>
+</mapper>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+
+
+
+
+
+
+
+
+
+
+
+

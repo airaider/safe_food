@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd"> 
+	
+
+<mapper namespace="com.ssafy.model.dao.SteamDao" >
+
+   <insert id="add"		parameterType="steam">
+   		insert into steam (id, code, cnt, date)
+   		values (
+   		        #{id:VARCHAR}
+   				,#{code:INTEGER}
+   				,#{cnt:INTEGER}
+   				,now()
+   				)
+   </insert>
+   
+   <delete id="remove" 		parameterType="int">
+   		delete from steam where no=#{no}
+   </delete>
+   <update id="update"		parameterType="steam">
+   		update steam set id=#{id:VARCHAR}
+   		                , code = #{code:INTEGER}
+   		                , cnt = #{cnt:INTEGER}
+   		where  no = #{no:INTEGER}
+   </update>
+   
+   <select id="searchSteamList"	parameterType="string"		resultType="steam">
+   		select * from steam where id=#{id}
+   </select>
+   
+   <select id="search"		 parameterType="string"    resultType="steam">
+   		select * from steam  where no=#{no}
+   </select>
+   
+   <select id="searchAll"	resultType="eatinfo">
+   		select * from steam
+   </select>
+   <select id="count"	resultType="int">
+   		select count(*) as cnt from steam
+   </select>
+</mapper>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+
+
+
+
+
+
+
+
+
+
+
+

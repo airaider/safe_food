@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd"> 
+	
+
+<mapper namespace="com.ssafy.model.dao.MemberDAO" >
+
+   <insert id="add"		parameterType="member">
+   		insert into food_member (id, password, name, phone, allergy)
+   		values ( #{id:VARCHAR}
+   		        ,#{password:VARCHAR}
+   		        ,#{name:VARCHAR}
+   		        ,#{phone:VARCHAR}
+   		        ,#{allergy:VARCHAR})
+   </insert>
+   <delete id="delete" 		parameterType="string">
+   		delete from food_member where id=#{id}
+   </delete>
+   <update id="update"		parameterType="member">
+   		update food_member set password=#{password:VARCHAR}
+   		                , name = #{name:VARCHAR}
+   		                , phone= #{phone:VARCHAR}
+   		                , allergy=#{allergy:VARCHAR}
+   		where  id = #{id:VARCHAR}
+   </update>
+   
+   <select id="search"		 parameterType="string"    resultType="member">
+   		select * from food_member  where id=#{id}
+   </select>
+   <select id="searchpassword"		 parameterType="string"    resultType="member">
+   		select * from food_member  where id=#{id} and name = #{name:VARCHAR} and phone= #{phone:VARCHAR}
+   </select>
+   <select id="searchAll"	parameterType="pagebean"	resultType="member">
+   		select * from food_member 
+   </select>
+   <select id="count"	resultType="int"	parameterType="pagebean">
+   		select count(*) as cnt from food_member
+   </select>
+</mapper>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+
+
+
+
+
+
+
+
+
+
+
+

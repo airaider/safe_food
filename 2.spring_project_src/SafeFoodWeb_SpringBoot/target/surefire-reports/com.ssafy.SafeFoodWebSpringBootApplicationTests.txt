@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: com.ssafy.SafeFoodWebSpringBootApplicationTests
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 3.103 s - in com.ssafy.SafeFoodWebSpringBootApplicationTests

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" 
+	"http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+	<typeAliases>
+		<!-- MyBatis Query를 위한 Xml에서 resultType, parametertype 으로  
+		     사용할  VO 클래스에 대한 별칭 설정 
+		  Java AIP에 대한 별칭 설정 정보 : org.apache.ibits.type.TypeAliasRegistry 
+		  -->
+		<typeAlias type="com.ssafy.model.dto.Member" 	alias="member"/>
+		<typeAlias type="com.ssafy.model.dto.Food" 	alias="food"/>
+		<typeAlias type="com.ssafy.model.dto.FoodPageBean" 	alias="foodpagebean"/>
+		<typeAlias type="com.ssafy.model.dto.PageBean" 	alias="pagebean"/>
+		<typeAlias type="com.ssafy.model.dto.EatInfo" 	alias="eatinfo"/>
+		<typeAlias type="com.ssafy.model.dto.FAQ"	alias="faq"/>	
+		<typeAlias type="com.ssafy.model.dto.Reply"	alias="reply"/>	
+		<typeAlias type="com.ssafy.model.dto.Steam"	alias="steam"/>	
+		<typeAlias type="com.ssafy.model.dto.Notice"	alias="notice"/>	
+	</typeAliases>
+	<mappers>
+		<mapper resource="mapper/Member_query.xml"/>
+		<mapper resource="mapper/Steam_query.xml"/>
+		<mapper resource="mapper/Food_query.xml"/>
+		<mapper resource="mapper/EatInfo_query.xml"/>
+		<mapper resource="mapper/FAQ_query.xml"/>
+		<mapper resource="mapper/Reply_query.xml"/>
+		<mapper resource="mapper/Notice_query.xml"/>
+	</mappers>
+</configuration>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
